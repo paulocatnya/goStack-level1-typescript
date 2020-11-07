@@ -1,0 +1,59 @@
+### LIGUAGEM BASEADA EM JS 
+    Acrescenta tipagem
+    Permite acessar as features mais recentes do JS (babel)
+    Resolve  problemas, muitas vezes JS é muito aberto, etc...
+    Auto complete é bom demais!  Com TS o editor completa melhor
+
+### MITOS E VERDADES
+        TS diminui produtividade: No inicio até pode ser, mas dps ganho tempo.
+        TS é transformar JS em C# ou Java, não é fortemente tipado. Em ts nem toda var é tipada.
+        O mercado não usa TypeScript - Mercado está virando.
+        TS substitui JS por completo - Depende profundamente do JS
+        TS atrapalha iniciante - Depende, quando pega, pega! O autocomplete salva.
+
+### Iniciando projeto
+    yarn init -y  
+    yarn add typescript -D
+
+### configurando autocomplete (mudar nome do pack)
+    yarn add -D @types/express
+
+### node não reconhece ts por isso não roda o arquivo .ts, para rodar
+    Sendo assim rodamos o comandos abaixo para gerar um arquivo .js
+    yarn tsc src/index.ts  
+
+### vai dar erro pois precisa do tsconfig
+    yarn tsc --init   
+
+### depois do comando acima, para ficar mais simples aplicamos o comando abaixo para já
+    gerar todos os arqs de ts para js
+    yarn tsc  
+
+### depois disso podemos rodar o node
+    node src/index.ts 
+
+### não é legal deixar o index dentro do src
+    no tsconfig.json eu deixo
+    "outDir": "./dist",      
+
+### Quando add tipagem?
+    o vs code já nos ajuda cobrando
+    exemplo: 
+    routes.ts::: 
+        import { Request, Response } from 'express'
+        export function hello(request: Request, response: Response) {
+
+### Usamos export default no arquivo que só tem uma funcionalidade
+
+### para padronizar tipos nos podemos criar as interfaces
+export default function createUser({ name='', email, password }:CreateUserData) {
+    const user = {
+        name,
+        email,
+        password
+    }
+    Se tiver interrogacao significa que é opcional
+
+
+GUIA TYPESCRIPT
+https://www.notion.so/Typescript-5712aeab312d44fcba0aa88895caad36#61ff7ffe99f84a669d721f6d5e99dba5
